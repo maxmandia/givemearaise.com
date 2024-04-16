@@ -8,6 +8,9 @@ export const env = createEnv({
    */
   server: {
     DATABASE_URL: z.string().url(),
+    APP_ID: z.string(),
+    WEBHOOK_SECRET: z.string(),
+    PRIVATE_KEY_PATH: z.string(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
@@ -29,6 +32,9 @@ export const env = createEnv({
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
+    APP_ID: process.env.APP_ID,
+    WEBHOOK_SECRET: process.env.WEBHOOK_SECRET,
+    PRIVATE_KEY_PATH: process.env.PRIVATE_KEY_PATH,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
